@@ -33,8 +33,7 @@ private:
     //  }
 
 public:
-    Persona(string tipoDoc, int documento, string nombre, string apellido, float peso, float estatura, int edad, string sexo)
-        : tipoDoc(tipoDoc), documento(documento), nombre(nombre), apellido(apellido), peso(peso), estatura(estatura), edad(edad), sexo(sexo) {}
+    Persona() {}
 
     void pedir_datos()
     {
@@ -72,50 +71,3 @@ public:
         }
     }
 };
-
-class Empleado : Persona
-{
-private:
-    string cargo;
-    float valorHora;
-    float horasTrabajadas;
-    string departamento;
-
-public:
-    float calcularHonorarios() const
-    {
-        double total = valorHora * horasTrabajadas;
-        double reteica = total * 0.00966;
-        return total - reteica;
-    }
-    void mostrar_datos()
-    {
-        cout << "nombre: " << nombre << endl;
-        cout << "apellido: " << apellido << endl;
-        cout << "tipo de documento: " << tipoDoc << endl;
-        cout << "documento: " << documento << endl;
-        cout << "peso: " << peso << endl;
-        cout << "estatura: " << estatura << endl;
-        cout << "sexo: " << sexo << endl;
-        cout << "Cargo: " << cargo << endl;
-        cout << "Horas trabajadas: " << horasTrabajadas << endl;
-        cout << "Valor por hora: " << valorHora << endl;
-        cout << "Total a pagar: " << calcularHonorarios() << endl;
-    }
-};
-
-int main()
-{
-
-    Persona user;
-
-    user.pedir_datos();
-
-    user.mostrar_personas();
-
-    user.calcularlmc();
-
-    user.mayoredad();
-
-    return 0;
-}

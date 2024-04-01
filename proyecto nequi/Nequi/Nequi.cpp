@@ -23,6 +23,158 @@ private:
     string contraseñas[10000000];
 
 public:
+
+//get
+    int gettransferencia()
+    {
+        return transferencia;
+    }
+
+    float getrecarga()
+    {
+        return recarga;
+    }
+    string getnumeroCelular()
+    {
+        return numeroCelular;
+    }
+
+    string getoperadorCelular()
+    {
+        return operadorCelular;
+    }
+
+    unsigned int get_recargaCelular()
+    {
+        return recargaCelular;
+    }
+
+    string getnumeroTransferencia()
+    {
+        return  numeroTransferencia;
+    }
+
+    int get_montoTransferencia()
+    {
+        return montoTransferencia;
+    }
+
+    int get_montoColchon()
+    {
+        return montoColchon;
+    }
+
+    int get_transferenciaDinero()
+    {
+        return transferenciaDinero;
+    }
+
+    vector<string> get_movimientosRecarga()
+    {
+        return movimientosRecarga[5][3];
+    }
+
+    vector<string> get_puntero()
+    {
+        return puntero[5][3];
+    }
+
+    float get_dolares()
+    {
+        return dolares;
+    }
+
+    float get_pesos()
+    {
+        return pesos;
+    }
+
+    string get_arreglos_celular()
+    {
+        return arreglos_celular[10000000];
+    }
+
+    string getcontraseias()
+    {
+        return contraseñas[10000000];
+    }
+
+        //set 
+
+    void settransferencia(int x)
+    {
+        this->transferencia = x;
+    }
+
+    void setrecarga(float y)
+    {
+        this->recarga = y;
+    }
+    void setnumeroCelular(string z)
+    {
+        this->numeroCelular = z;
+    }
+
+    void setoperadorCelular(string u)
+    {
+        this->operadorCelular = u;
+    }
+
+    void set_recargaCelular(unsigned int q)
+    {
+        this-> recargaCelular = q;
+    }
+
+    void setnumeroTransferencia(string g)
+    {
+        this->numeroTransferencia = g;
+    }
+
+    void set_montoTransferencia(int h)
+    {
+        this->montoTransferencia = h;
+    }
+
+    void set_montoColchon(int j)
+    {
+        this->montoColchon = j;
+    }
+
+    void set_transferenciaDinero(int i)
+    {
+        this->transferenciaDinero = i;
+    }
+
+    void set_movimientosRecarga(string k)
+    {
+        this->movimientosRecarga[5][3] = k;
+    }
+
+    void set_puntero(string t)
+    {
+        this->puntero[5][3] = t;
+    }
+
+    void set_dolares(float r)
+    {
+        this->dolares = r;
+    }
+
+    void set_pesos(float o)
+    {
+        this->pesos = o;
+    }
+
+    void set_arreglos_celular(string m)
+    {
+        this->arreglos_celular[10000000] = m;
+    }
+
+    void setcontrasenias(string n)
+    {
+        this->contraseñas[10000000] = n;
+    }
+        
     void registrar_usuario(string arreglos_celular[], string contraseñas[])
     {
         string numero_celular;

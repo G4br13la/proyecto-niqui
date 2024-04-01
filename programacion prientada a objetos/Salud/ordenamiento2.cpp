@@ -1,6 +1,5 @@
 #include <iostream>
 #include <string>
-#include <__iterator/reverse_iterator.h>
 
 using namespace std;
 
@@ -114,5 +113,83 @@ int main()
 
     cout << "lista ordenada es: " << endl;
     imprimirlista(head);
+    return 0;
+}
+
+#include <iostream>
+using namespace std;
+
+struct Node
+{
+    int data;
+    Node *next;
+    Node(int val) : data(val), next(nullptr) {}
+};
+
+void insertar_inicio_lista(Node *&head, int val)
+{
+    Node *nuevoNode = new Node(val);
+    nuevoNode->next = head;
+    head = nuevoNode;
+}
+
+void imprimir_lista(Node *head)
+{
+    while (head != nullptr)
+    {
+        cout << head->data << " ";
+        head = head->next;
+    }
+    cout << endl;
+}
+
+void ordenar_lista(Node *&head)
+{
+    if (head == nullptr || head->next == nullptr)
+    {
+        return;
+    }
+    Node *sorted = nullptr; // Nuevo nodo ordenado
+    Node *current = head;   // Nodo actual se le asigna la nueva función
+
+    while (current != nullptr)
+    {
+        Node *nextNode = current->next;
+        if (sorted == nullptr || sorted->data >= current->data)
+        {
+            current->next = sorted;
+            sorted = current;
+        }
+        else
+        {
+            Node *temp = sorted;
+            while (temp->next && temp->next->data < current->data)
+            {
+                temp = temp->next;
+            }
+            current->next = temp->next;
+            temp->next = current;
+        }
+        current = nextNode;
+    }
+    head = sorted;
+}
+
+int main()
+{
+    Node *head = nullptr;
+    insertar_inicio_lista(head, 50);
+    insertar_inicio_lista(head, 160);
+    insertar_inicio_lista(head, 5);
+    insertar_inicio_lista(head, 1);
+
+    cout << "La lista original es: " << endl;
+    imprimir_lista(head);
+
+    ordenar_lista(head);
+
+    cout << "La lista ordenada es: " << endl;
+    imprimir_lista(head);
+
     return 0;
 }
